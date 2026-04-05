@@ -58,7 +58,7 @@ export const INSTRUMENT_GROUPS = [
 ] as const
 
 // Flat list untuk lookup cepat
-export const ALL_PAIRS = INSTRUMENT_GROUPS.flatMap(g => g.items)
+export const ALL_PAIRS = INSTRUMENT_GROUPS.flatMap(g => g.items as unknown as { value: string, label: string, desc: string }[])
 
 // Timeframes
 export const TIMEFRAMES = [

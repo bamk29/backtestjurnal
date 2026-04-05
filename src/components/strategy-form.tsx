@@ -88,7 +88,7 @@ export function StrategyForm({ onSuccess }: { onSuccess?: () => void }) {
               )} />
               <FormField control={form.control} name="type" render={({ field }) => (
                 <FormItem><FormLabel>Tipe</FormLabel>
-                  <Select onValueChange={handleTypeChange} value={form.watch("type") || "SMC"}>
+                  <Select onValueChange={(v) => handleTypeChange(v || "SMC")} value={form.watch("type") || "SMC"}>
                     <FormControl><SelectTrigger className="bg-zinc-950 border-zinc-800"><SelectValue /></SelectTrigger></FormControl>
                     <SelectContent className="bg-zinc-950 border-zinc-800">
                       {["SMC", "ICT", "Price Action", "Indicator", "Manual"].map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
